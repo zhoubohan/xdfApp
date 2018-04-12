@@ -41,7 +41,7 @@
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
           <input class="input-text size-L" type="text" placeholder="验证码"  name="code" value="" style="width:150px;">
-        
+          <img src="/captcha" alt="点击更新验证码" onclick="reloadCode(this)">
           </div>
       </div>
       <div class="row cl">
@@ -61,5 +61,10 @@
 <div class="footer">singwa-app-admin</div>
 <script type="text/javascript" src="__STATIC__/hadmin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="__STATIC__/hadmin/static/h-ui/js/H-ui.min.js"></script>
+<script>
+  function reloadCode(obj) {
+    obj.src = "/captcha?id="+Math.random();
+  }
+</script>
 </body>
 </html>
